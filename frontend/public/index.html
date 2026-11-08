@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AWS Deployment Project</title>
+</head>
+<body>
+
+    <h1>AWS Flask + Express Application</h1>
+
+    <h3>Frontend: Express.js is running!</h3>
+
+    <button onclick="getMessage()">
+        Test Flask Backend
+    </button>
+
+    <h3>Backend Response:</h3>
+
+    <p id="result">Waiting for response...</p>
+
+    <script>
+        async function getMessage() {
+            const response = await fetch("/api/message");
+            const data = await response.json();
+
+            document.getElementById("result").innerText =
+                JSON.stringify(data);
+        }
+    </script>
+
+</body>
+</html>
